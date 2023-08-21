@@ -46,8 +46,8 @@ def welcome():
         f"/api/v1.0/precipitation<br/>"
         f"/api/v1.0/stations<br/>"
         f"/api/v1.0/tobs<br/>"
-        f"/api/v1.0/<start><br/>"
-        f"/api/v1.0/<start>/<end>"
+        f"/api/v1.0/start_date(YYYY-MM-DD)<br/>"
+        f"/api/v1.0/start_date(YYYY-MM-DD)/end_date(YYYY-MM-DD)"
     )
 
 #################################################
@@ -132,9 +132,9 @@ def start_date(start):
 
     temp_stats_data= []
     temp_stats_dict = [{"Start Date": start},
-                       {"Minimum Temperature": min_temp},
-                       {"Maximum Temperature": max_temp},
-                       {"Average Temperature": avg_temp}]
+                       {"TMIN": min_temp},
+                       {"TMAX": max_temp},
+                       {"TAVG": avg_temp}]
 
     temp_stats_data.append(temp_stats_dict)
 
@@ -161,9 +161,9 @@ def start_end_date(start, end):
     temp_stats_data = []
     temp_stats_dict = [{"Start Date": start_date},
                        {"End Date": end_date},
-                       {"Minimum Temperature": min_temp},
-                       {"Maximum Temperature": max_temp},
-                       {"Average Temperature": avg_temp}]
+                       {"TMIN": min_temp},
+                       {"TMAX": max_temp},
+                       {"TAVG": avg_temp}]
 
     temp_stats_data.append(temp_stats_dict)
 
